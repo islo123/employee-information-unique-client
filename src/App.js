@@ -7,8 +7,8 @@ import { FaSyncAlt } from "react-icons/fa";
 import { Route, Routes, Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom"
 
-import SingleEmplyee from './component/SingleEmplyee';
-import GetEmployee from './component/GetEmployee';
+import UpdateEmployee from './component/UpdateEmployee';
+import TotalEmployee from './component/TotalEmployee';
 import AddEmployee from './component/AddEmployee';
 import { api } from "./api/Axios"
 
@@ -33,7 +33,7 @@ function App() {
   const navigate = useNavigate()
 
 
-  const onPageOpenGetEmployee = async function (){ 
+  const onPageOpenTotalEmployee = async function (){ 
     api.get("/").then(function(res){
       setData(res.data.employees)
       setIsLoading(false)
@@ -44,7 +44,7 @@ function App() {
 }
 
   useEffect(() => {
-    onPageOpenGetEmployee()
+    onPageOpenTotalEmployee()
   }, [JSON.stringify(data)])
 
   const getNewEmployee = async function(e){
@@ -105,9 +105,9 @@ function App() {
         </ul>
       </div>
       <Routes>
-        <Route path="/" element={ <GetEmployee data={data} setData={setData}/> }/>
+        <Route path="/" element={ <TotalEmployee data={data} setData={setData}/> }/>
 
-        <Route path=":_id" element={ <SingleEmplyee
+        <Route path=":_id" element={ <UpdateEmployee
           data={data}
           updatedName={updatedName} setUpdatedName={setUpdatedName}
           updatedTeam={updatedTeam} setUpdatedTeam={setUpdatedTeam}

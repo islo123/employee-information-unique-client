@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 
 
 
-export default function ManageEmployee({data}) {
+export default function EmployeeList({data}) {
 
   return (
     <div className="table-body">

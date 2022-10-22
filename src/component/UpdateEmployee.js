@@ -1,10 +1,9 @@
 import React, { useEffect} from 'react'
 import { FaTrashAlt, FaCheck } from "react-icons/fa"
 import { useParams, Link} from "react-router-dom"
-import {format, formatDuration } from "date-fns/esm"
-import differenceInCalendarDays from "date-fns/differenceInCalendarDays"
+import {format } from "date-fns/esm"
 
-export default function SingleEmplyee({
+export default function UpdateEmployee({
     data=[], 
     updatedName,
     setUpdatedName,
@@ -42,11 +41,8 @@ export default function SingleEmplyee({
                     <p id='name' className='name'>Aloitus päivä {format(new Date(post.firstDay), 'yyyy-MM-dd')}</p>
                     <p id='name' className='name'>Viimeinen päivä {format(new Date(post.lastDay), 'yyyy-MM-dd')}</p>
             
-                </div>
-                    <p>Työntekijällä on yhteensä { differenceInCalendarDays(new Date(post.lastDay), new Date(post.firstDay))} päivä</p>
-                    <p>Kulunut { differenceInCalendarDays(new Date(Date.now()), new Date(post.firstDay))} päivää</p>
-                    <p>Jäljellä { differenceInCalendarDays(new Date(post.lastDay), new Date(Date.now()))} päivää</p>
-                <div>
+                    </div><div>
+                    
                     <form onSubmit={(e) => e.preventDefault()}>
                         <br className='responsive-br'/>
                         <input type='text' value={updatedName} onChange={(e) => setUpdatedName(e.target.value)}/>
