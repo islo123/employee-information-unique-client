@@ -17,7 +17,7 @@ export default function AddEmployee({
         <div>
             {msg? 
                 <div>   
-                    <h3>Työntekijä lisätään. Odota hetki</h3>,
+                    <h3>Työntekijä lisätään. Odota hetki</h3>
                     <div className='loading'><FaSyncAlt className='rotate-loading'/></div>
                 </div> :
                     <form className='add-form' onSubmit={getNewEmployee}>
