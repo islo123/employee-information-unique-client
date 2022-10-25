@@ -36,10 +36,10 @@ export default function UpdateEmployee({
         post &&
             <div>
                 <div className='employee-update'>
-                    <p id='name' className='name'>Valittu työntekijä {post.name}</p>
-                    <p id='name' className='name'>Tiimi {post.team}</p>
-                    <p id='name' className='name'>Aloitus päivä {format(new Date(post.firstDay), 'yyyy-MM-dd')}</p>
-                    <p id='name' className='name'>Viimeinen päivä {format(new Date(post.lastDay), 'yyyy-MM-dd')}</p>
+                    <p id='name' className='update-name'>Valittu työntekijä <br/> {post.name}</p>
+                    <p id='name' className='update-name'>Tiimi <br/> {post.team}</p>
+                    <p id='name' className='update-name'>Aloitus päivä <br/> {format(new Date(post.firstDay), 'yyyy-MM-dd')}</p>
+                    <p id='name' className='update-name'>Viimeinen päivä <br/> {format(new Date(post.lastDay), 'yyyy-MM-dd')}</p>
             
                     </div><div>
                     
@@ -69,10 +69,10 @@ export default function UpdateEmployee({
     }
             {
                 !post &&
-                <div>
+                <div className='deleted-employee'>
 
                     <p>Työntekijä poistetu</p>
-                    <Link to="/">Pala Työntekijä listan</Link>
+                    <Link className='deleted-post-link' to="/">Pala Työntekijä listan</Link>
                 </div>
             }
         

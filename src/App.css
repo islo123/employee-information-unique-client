@@ -1,8 +1,9 @@
 body{
     margin: 0;
+    background-color: #00bfff;
 }
 .App {
-    background-color: aqua;
+    background-color: #00bfff;
     text-align: center;
     padding: 1rem;
 }
@@ -24,8 +25,8 @@ ul {
     padding: 1rem;
 }
 .App h1:hover {
-    background-color: blueviolet;
-    color: aliceblue;
+    background-color: #003399;
+    color: white;
 }
 
 
@@ -36,21 +37,29 @@ ul {
 }
 
 .employee-table td, .employee-table th {
-    border: 1px solid #ddd;
+    border: 1px solid #003399;
     padding: 8px;
 }
 
 .employee-table th {
     width: 200px;
-    
+    color: black;
     align-items: center;
 }
 
-.employee-thead {
-    background-color: greenyellow;
+.employee-hover tr:hover th {
+    background-color: #003399;
+    color: white !important;
 }
 
-.employee:nth-child(even){background-color: #f2f2f2;}
+.employee-thead {
+    background-color: #d9d9d9;
+}
+
+.employee:nth-child(even){
+    background-color: #f2f2f2;
+    
+}
 
 label {
     padding-right: 10px;
@@ -89,6 +98,12 @@ button {
     border: 1px solid navy;
 }
 
+.update-name {
+    background-color: white;
+    padding: 5px;
+    color: #003399;
+}
+
 .responsive-br {
     display: none;
 }
@@ -103,11 +118,24 @@ button {
     text-align: left;
 }
 
+.deleted-employee {
+    color: white;
+}
+
+.deleted-post-link {
+    color: #003399;
+}
+
+.deleted-post-link:hover {
+    color: white;
+}
+
 .loading {
     text-align: center;
     position: absolute;
     top: 50%; right: 50%;
     transform: translate(50%,-50%);
+    color: white;
 }
 
 .rotate-loading {

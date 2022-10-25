@@ -29,7 +29,7 @@ export default function EmployeeList({data}) {
           return (
           <div key={index} className="employee">
             <Link style={{textDecoration: 'none'}} to={`/${employee._id}`}>
-              <table className="employee-table">
+              <table className="employee-table employee-hover">
                 <tbody className="employee-tbody">
                   <tr>
                     <th>
