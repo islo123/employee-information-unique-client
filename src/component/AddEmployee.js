@@ -32,9 +32,7 @@ export default function AddEmployee({msg, setMsg}) {
         setNewTeam("");
         setNewFirstDay("")
         setNewLastDay("")
-        setTimeout(() => {
-            navigate("/employee")
-        }, 1000)
+        navigate("/employee")
         window.location.reload();
     }
     return (
