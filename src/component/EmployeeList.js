@@ -1,9 +1,39 @@
-import {format} from "date-fns/esm"
+import {format} from "date-fns"
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom"
+import { FaSyncAlt } from "react-icons/fa"
+
+import { api } from '../api/Axios'
+import { useAuthContext } from '../hooks/useAuthContext';
+import { useEmployeeContext } from '../hooks/useEmployeeContext';
 
 
+export default function EmployeeList() {
 
-export default function EmployeeList({data}) {
+  const [isLoading, setIsLoading] = useState(false)
+
+  const {employees, dispatch} = useEmployeeContext()
+  const { user } = useAuthContext();
+
+  const onClickAllEmployee = async function (){ 
+    setIsLoading(true)
+    const res = await api.get("/employee", {headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${user.token}`}})
+    dispatch({type: 'SET_EMPLOYEES', payload: res.data.employees})
+
+    setIsLoading(false)
+  }
+  
+  useEffect(() => {  
+        onClickAllEmployee()
+  }, [ user])
+
+  if(isLoading){
+    return (
+      <div>
+        <div className='loading'><FaSyncAlt className='rotate-loading'/></div>
+      </div>
+    )
+  }
 
   return (
     <div className="table-body">
@@ -11,7 +41,7 @@ export default function EmployeeList({data}) {
           <thead>
             <tr>
               <th>
-                <p>Nimi</p>
+                <p>Etu- ja sukunimi</p>
               </th>
               <th>
                 <p>Tiimi</p>
@@ -25,10 +55,10 @@ export default function EmployeeList({data}) {
             </tr>
           </thead>
       </table>
-      {data.map((employee, index) => {
+      {employees && employees.map((employee, index) => {
           return (
           <div key={index} className="employee">
-            <Link style={{textDecoration: 'none'}} to={`/${employee._id}`}>
+            <Link style={{textDecoration: 'none'}} to={`/employee/${employee._id}`}>
               <table className="employee-table employee-hover">
                 <tbody className="employee-tbody">
                   <tr>
@@ -52,6 +82,11 @@ export default function EmployeeList({data}) {
           )
       })
       }
+        <div className='employee-calculator'>
+          <div>
+            <h3 style={{color: "ButtonShadow"}}>{employees && employees.length +  " työntekijä" }</h3>
+          </div>
+        </div>
     </div>
   )
 }

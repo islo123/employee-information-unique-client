@@ -28,7 +28,12 @@ ul {
     background-color: #003399;
     color: white;
 }
+.hello-user {
+    text-transform: capitalize;
+    color: #ffff66;
+    letter-spacing: 5px;
 
+}
 
 .employee-table {
   display: flex;
@@ -66,9 +71,14 @@ label {
 }
 
 input {
-    border-radius: 3px;
-    margin: 10px;
-    padding: 0.5rem;
+    padding: 6px;
+    border: 1px solid #003399;
+    border-radius: 4px;
+    margin: 5px;
+}
+
+input:focus{
+    outline: none;
 }
 
 button {
@@ -129,7 +139,9 @@ button {
 .deleted-post-link:hover {
     color: white;
 }
-
+.table-body {
+    position: relative;
+}
 .loading {
     text-align: center;
     position: absolute;
@@ -140,6 +152,26 @@ button {
 
 .rotate-loading {
     animation: rotation 2s infinite linear;
+}
+
+.login-btn {
+    width: 200px;
+    background-color: #003399;
+    color: white;
+    border-radius: 5px;
+}
+
+.signup-btn {
+    width: 200px;
+    background-color: #003399;
+    color: white;
+    border-radius: 5px;
+}
+
+.errMsg {
+    background-color: #f2f2f2;
+    color: #003399;
+    margin-top: 1rem;
 }
 
 @keyframes rotation {
