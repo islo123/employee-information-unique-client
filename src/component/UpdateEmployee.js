@@ -46,7 +46,7 @@ export default function UpdateEmployee() {
           return
         }
     
-        const res = await api.delete(`/employee/${_id}`, {headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${user.token}`}})
+        const res = await api.delete(`/employee/${_id}`, {headers: { "Access-Control-Allow-Origin": "*", 'Content-Type': 'application/json', Authorization: `Bearer ${user.token}`}})
         dispatch({type: 'DELETE_EMPLOYEE', payload: res.data})
       }
 

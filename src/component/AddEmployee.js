@@ -23,7 +23,7 @@ export default function AddEmployee({msg, setMsg}) {
     const getNewEmployee = async function(e){
         e.preventDefault()
 
-        let res = await api.post("/employee", {name: newEmployee, team: newTeam, firstDay: newFirstDay, lastDay: newLastDay}, {headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${user.token}`}})
+        let res = await api.post("/employee", {name: newEmployee, team: newTeam, firstDay: newFirstDay, lastDay: newLastDay}, {headers: { "Access-Control-Allow-Origin": "*", 'Content-Type': 'application/json', Authorization: `Bearer ${user.token}`}})
             if(newEmployee || newTeam || newFirstDay || newLastDay){
                 dispatch({type: 'CREATE_EMPLOYEE', payload: res.data})
             }
