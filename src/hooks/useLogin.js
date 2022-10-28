@@ -8,7 +8,7 @@ export const useLogin = () => {
 
     const login = async (email, password) => {
             try {
-                const res = await api.post('/login', {email, password});
+                const res = await api.post('/login',{email, password}, {headers: { "Access-Control-Allow-Origin": "*",'Content-Type': 'application/json'}});
                 localStorage.setItem('user', JSON.stringify(res.data))
                 dispatch({type: 'LOGIN', payload: res.data})
             } catch(error) {

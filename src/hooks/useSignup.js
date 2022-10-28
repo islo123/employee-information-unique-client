@@ -7,7 +7,7 @@ export const useSignup = () => {
     const [errMsg, setErrMsg] = useState("")
     const signup = async (name, email, password) => {
             try {
-                const res = await api.post('/register', {name, email, password})
+                const res = await api.post('/register', {name, email, password}, {headers: { "Access-Control-Allow-Origin": "*",'Content-Type': 'application/json'}})
                 localStorage.setItem('user', JSON.stringify(res.data))
                 dispatch({type: 'LOGIN', payload: res.data})
             } catch(error) {
