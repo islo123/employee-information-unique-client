@@ -17,7 +17,7 @@ export default function EmployeeList() {
 
   const onClickAllEmployee = async function (){ 
     setIsLoading(true)
-    const res = await api.get("/employee", {headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${user.token}`}})
+    const res = await api.get("/employee", {headers: { "Access-Control-Allow-Origin": "*",'Content-Type': 'application/json', Authorization: `Bearer ${user.token}`}})
     dispatch({type: 'SET_EMPLOYEES', payload: res.data.employees})
 
     setIsLoading(false)
