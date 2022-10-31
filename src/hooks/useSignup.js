@@ -7,7 +7,7 @@ export const useSignup = () => {
     const [errMsg, setErrMsg] = useState("")
     const signup = async (name, email, password) => {
             try {
-                const res = await api.post('/register', {name, email, password}, {headers: { "Access-Control-Allow-Origin": "https://employye-information-unique.herokuapp.com/api/",'Content-Type': 'application/json'}, withCredentials: true})
+                const res = await api.post('/register', {name, email, password}, {headers: { "Access-Control-Allow-Origin": "*",'Content-Type': 'application/json'}, withCredentials: true})
                 localStorage.setItem('user', JSON.stringify(res.data))
                 dispatch({type: 'LOGIN', payload: res.data})
             } catch(error) {
