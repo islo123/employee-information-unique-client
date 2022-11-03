@@ -13,8 +13,14 @@ export const useSignup = () => {
             } catch(error) {
                 if(!error?.response) {
                     setErrMsg('Serveri ei vasta. Vaihda sähköpostiosoite')
+                    setTimeout(() => {
+                        window.location.reload();
+                    }, 2000)
                 } else {
                     setErrMsg('Jokin meni pielen')
+                    setTimeout(() => {
+                        window.location.reload();
+                    }, 2000)
                 }
             }
         } 
