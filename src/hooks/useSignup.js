@@ -12,15 +12,12 @@ export const useSignup = () => {
                 dispatch({type: 'LOGIN', payload: res.data})
             } catch(error) {
                 if(!error?.response) {
-                    setErrMsg('Serveri ei vasta. Vaihda sähköpostiosoite')
-                    setTimeout(() => {
-                        window.location.reload();
-                    }, 2000)
-                } else {
+                    setErrMsg('Serveri ei vasta')
+                } else if(error.response?.status === 409) {
+                    setErrMsg('Sähköpostiosoite varattu')
+                }
+                else {
                     setErrMsg('Jokin meni pielen')
-                    setTimeout(() => {
-                        window.location.reload();
-                    }, 2000)
                 }
             }
         } 
