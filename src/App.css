@@ -32,13 +32,13 @@ ul {
     text-transform: capitalize;
     color: #ffff66;
     letter-spacing: 5px;
-
+    margin-top: 0;
+    margin-right: 1rem;
 }
 
 .employee-table {
   display: flex;
   justify-content: center;
-  
 }
 
 .employee-table td, .employee-table th {
@@ -173,6 +173,43 @@ button {
     color: #003399;
     margin-top: 1rem;
 }
+.settings-icon {
+    font-size: xx-large;
+    margin-right: 1rem;
+    color: #d9d9d9;
+}
+.settings-header {
+    display: flex;
+    justify-content: right;
+}
+.delete-all-container {
+    position: relative;
+}
+
+.modal-container {
+    background-color: #003399;
+    color: white;
+    position: absolute;
+    top: 50%; right: 50%;
+    transform: translate(50%,-50%);
+    align-items: center;
+}
+
+.confirm-delete-btn {
+    margin: 10px;
+    background-color: #DC143C;
+    color: white;
+}
+.cancel-delete-btn {
+    margin: 10px;
+    background-color: #00bfff;
+    color: #f2f2f2;
+}
+.modal-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 
 @keyframes rotation {
     to {
@@ -190,4 +227,17 @@ button {
     .responsive-br {
         display: inline-block;
     }
+    .table-body {
+        overflow: scroll;
+        overflow-y: hidden;
+        display: inline-block;
+        clear: both;
+    
+    }
+    .employee-table th {
+        min-width: 100px;
+    }
+    .employee-table {
+        justify-content: left;        
+      }
   }

@@ -11,7 +11,8 @@ export default function AddEmployee({msg, setMsg}) {
     const [newEmployee, setNewEmployee] = useState("")
     const [newTeam, setNewTeam] = useState("")
     const [newFirstDay, setNewFirstDay] = useState("")
-    const [newLastDay,setNewLastDay] = useState("")
+    const [newLastDay, setNewLastDay] = useState("")
+    const [newBirth, setNewBirth] = useState("")
 
     const {dispatch} = useEmployeeContext()
     
@@ -23,8 +24,8 @@ export default function AddEmployee({msg, setMsg}) {
     const getNewEmployee = async function(e){
         e.preventDefault()
 
-        let res = await api.post("/employee", {name: newEmployee, team: newTeam, firstDay: newFirstDay, lastDay: newLastDay}, {headers: { "Access-Control-Allow-Origin": "*", 'Content-Type': 'application/json', Authorization: `Bearer ${user.token}`}})
-            if(newEmployee || newTeam || newFirstDay || newLastDay){
+        let res = await api.post("/employee", {name: newEmployee, team: newTeam, firstDay: newFirstDay, lastDay: newLastDay, birth: newBirth}, {headers: { "Access-Control-Allow-Origin": "*", 'Content-Type': 'application/json', Authorization: `Bearer ${user.token}`}})
+            if(newEmployee || newTeam || newFirstDay || newLastDay || newBirth){
                 dispatch({type: 'CREATE_EMPLOYEE', payload: res.data})
             }
         
@@ -32,6 +33,7 @@ export default function AddEmployee({msg, setMsg}) {
         setNewTeam("");
         setNewFirstDay("")
         setNewLastDay("")
+        setNewBirth("")
         navigate("/employee")
         window.location.reload();
     }
@@ -53,6 +55,9 @@ export default function AddEmployee({msg, setMsg}) {
                 <br className='responsive-br'/>
                 <input required type='date' disabled={newFirstDay === "" ? true: false} min={newFirstDay} value={newLastDay} onChange={(e) => { return setNewLastDay(e.target.value)}}/>
                 <br className='responsive-br'/>
+                <label>Syntymäaika</label>
+                <br className='responsive-br'/>
+                <input required type='date' value={newBirth} onChange={(e) => { return setNewBirth(e.target.value)}}/>
                 <button type='submit' className='add-btn'>Lisää <FaCheck/></button>
             </form>         
         </div>

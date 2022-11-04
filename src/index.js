@@ -10,7 +10,7 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
     <Routes>
-      <Route exact path="*" element={ <EmployeeContextProvider><AuthContextProvider><App /></AuthContextProvider></EmployeeContextProvider> }>
+      <Route exact path="*" element={<EmployeeContextProvider><AuthContextProvider><App /></AuthContextProvider></EmployeeContextProvider>}>
       </Route>    
     </Routes>
 

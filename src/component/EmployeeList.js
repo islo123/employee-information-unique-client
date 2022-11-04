@@ -25,7 +25,7 @@ export default function EmployeeList() {
   
   useEffect(() => {  
         onClickAllEmployee()
-  }, [ user])
+  }, [user])
 
   if(isLoading){
     return (
@@ -52,6 +52,9 @@ export default function EmployeeList() {
               <th>
                 <p>Viimeinen päivä</p>
               </th>
+              <th>
+                <p>Syntymäaika</p>
+              </th>
             </tr>
           </thead>
       </table>
@@ -73,6 +76,9 @@ export default function EmployeeList() {
                     </th>
                     <th>
                       <p id='name' className='lastDay'>{format(new Date(employee.lastDay), 'yyyy-MM-dd')}</p>
+                    </th>
+                    <th>
+                      <p id='name' className='birth'>{format(new Date(employee.birth), 'yyyy-MM-dd')}</p>
                     </th>
                   </tr>                  
                 </tbody>

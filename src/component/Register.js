@@ -19,8 +19,6 @@ export default function Register() {
             setName('')
             setEmail('')
             setPassword('')
-            //navigate('/employee')
-
         } catch (error) {
             console.log(error)
         }
