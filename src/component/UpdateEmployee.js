@@ -30,10 +30,10 @@ export default function UpdateEmployee() {
                 setUpdatedTeam(post.team)
                 setUpdatedFirstDay(format(new Date(post.firstDay), 'yyyy-MM-dd'))
                 setUpdatedLastDay(format(new Date(post.lastDay), 'yyyy-MM-dd'))
-                setUpdatedBirth(format(new Date(post.lastDay), 'yyyy-MM-dd'))
+                setUpdatedBirth(format(new Date(post.birth), 'yyyy-MM-dd'))
 
             }
-        }, [post, setUpdatedName, setUpdatedTeam, setUpdatedFirstDay, setUpdatedLastDay, employees])
+        }, [post, setUpdatedName, setUpdatedTeam, setUpdatedFirstDay, setUpdatedLastDay, setUpdatedBirth, employees])
 
     const updateEmployee = async function(_id){
       

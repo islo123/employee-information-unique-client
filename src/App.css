@@ -227,12 +227,11 @@ button {
     .responsive-br {
         display: inline-block;
     }
-    .table-body {
+    .App {
         overflow: scroll;
-        overflow-y: hidden;
         display: inline-block;
         clear: both;
-    
+   
     }
     .employee-table th {
         min-width: 100px;

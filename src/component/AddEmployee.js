@@ -58,6 +58,7 @@ export default function AddEmployee({msg, setMsg}) {
                 <label>Syntymäaika</label>
                 <br className='responsive-br'/>
                 <input required type='date' value={newBirth} onChange={(e) => { return setNewBirth(e.target.value)}}/>
+                <br className='responsive-br'/>
                 <button type='submit' className='add-btn'>Lisää <FaCheck/></button>
             </form>         
         </div>
