@@ -87,7 +87,6 @@ input:focus{
 
 button {
     padding: 0.5rem;
-    margin-left: 10px;
     border-radius: 3px;
     cursor: pointer;
 }
@@ -95,11 +94,13 @@ button {
 .done-btn {
     background-color: #04AA6D;
     color: white;
+    margin-left: 10px;
 }
 
 .delete-btn {
     background-color: #DC143C;
     color: white;
+    margin-left: 10px;
 }
 
 .employee-update {
@@ -126,6 +127,7 @@ button {
     border-radius: 3px;
     background-color: navy;
     color: white;
+    margin-left: 10px;
 }
 
 .employee-calculator {
