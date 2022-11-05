@@ -242,6 +242,9 @@ button {
     .responsive-br {
         display: inline-block;
     }
+    .nav-not-logged {
+        font-size: x-small;
+    }
     .nav {
         display: flex;
         text-align: right;
