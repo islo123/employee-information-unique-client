@@ -267,4 +267,7 @@ button {
     .nav-icon {
         margin: 0.5rem;
     }
+    button {
+        margin: 0 !important;
+    }
   }
