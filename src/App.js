@@ -34,7 +34,7 @@ function App() {
       <div >
         {
           !user &&
-          <ul className='nav'>
+          <ul className='nav-not-logged'>
             <li><Link style={{textDecoration: 'none'}} to="/login"><h1>Kirjaudu sisään</h1></Link></li>
             <li><Link style={{textDecoration: 'none'}} to="/register"><h1>Rekisteröidy</h1></Link></li>
           </ul>

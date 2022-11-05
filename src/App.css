@@ -12,6 +12,11 @@ body{
     flex-direction: column;
 }
 
+.nav-not-logged {
+    display: flex;
+    justify-content: space-around;
+}
+
 ul {
     list-style: none;
     text-align: left;
@@ -140,10 +145,9 @@ button {
 }
 .table-body {
     position: relative;
-    overflow-y: scroll;
+    overflow: auto;
     width: 100%;
     display: inline-block;
-    clear: both;
 }
 
 .loading {
