@@ -40,6 +40,7 @@ export default function Register() {
                     <label htmlFor='password' style={{color: 'white'}}> Salasana</label>
                     <br className='responsive-br'/>
                     <input id='password' required autoComplete='off' value={password} onChange={(e) => setPassword(e.target.value)} type='password'/>
+                    <br className='responsive-br'/>                   
                     <button type='submit' className='signup-btn'>Rekisteröidy</button>
                 </form>
                 <div className='errMsg'>{errMsg}</div>

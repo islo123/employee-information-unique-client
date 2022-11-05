@@ -48,6 +48,7 @@ export default function Login() {
                             <label htmlFor='password' style={{color: 'white'}}> Salasana</label>
                             <br className='responsive-br'/>
                             <input id='password' required autoComplete='off' value={password} onChange={(e) => setPassword(e.target.value)} type='password'/>
+                            <br className='responsive-br'/>
                             <button type='submit' className='login-btn'>Kirjaudu</button>
                         </form>     
                         <div className='errMsg'>{errMsg}</div>
