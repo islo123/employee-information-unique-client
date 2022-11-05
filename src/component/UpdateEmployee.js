@@ -94,10 +94,11 @@ export default function UpdateEmployee() {
                             <input type='date' min={format(new Date(post.firstDay), 'yyyy-MM-dd')} value={updatedLastDay} onChange={(e) => setUpdatedLastDay(e.target.value)}/>
                             <br className='responsive-br'/>
                             <label> Syntymäaika</label>
+                            <br className='responsive-br'/>
                             <input type='date' value={updatedBirth} onChange={(e) => setUpdatedBirth(e.target.value)}/>
                             <br className='responsive-br'/>
                             <button type='button' onClick={() => { return updateEmployee(post._id)}} className='done-btn'>Hyväksy <FaCheck/></button>
-                            <button className='delete-btn' id="delete-btn" onClick={() => {return deleteEmployee(post._id)}}>Poista <FaTrashAlt/></button> 
+                            <button className='delete-btn' style={{marginLeft: "10px"}} id="delete-btn" onClick={() => {return deleteEmployee(post._id)}}>Poista <FaTrashAlt/></button> 
                         </form>
                     </div>
 
