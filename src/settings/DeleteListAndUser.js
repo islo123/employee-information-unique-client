@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { FaTrashAlt } from "react-icons/fa"
 import { useNavigate } from 'react-router-dom'
 import { api } from '../api/Axios'
@@ -24,7 +24,7 @@ export default function DeleteListAndUser() {
 
     const deleteUser = async (_id) => {
         deleteAllEmployees()
-        const res = await api.delete(`/user/${_id}`, {headers: { "Access-Control-Allow-Origin": "*", 'Content-Type': 'application/json', Authorization: `Bearer ${user.token}`}})
+        await api.delete(`/user/${_id}`, {headers: { "Access-Control-Allow-Origin": "*", 'Content-Type': 'application/json', Authorization: `Bearer ${user.token}`}})
         localStorage.removeItem('user')
         dispatch({type: 'LOGOUT'})
         employeesDispatch({type: 'SET_EMPLOYEES', payload: null})
@@ -50,7 +50,6 @@ export default function DeleteListAndUser() {
             </div>
           </motion.div >
         }
-
     </div>
   )
 }

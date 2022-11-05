@@ -14,6 +14,9 @@ import { useLogout } from './hooks/useLogout';
 import { useAuthContext } from './hooks/useAuthContext';
 import Settings from './settings/Settings';
 import { FcSettings } from "react-icons/fc"
+import { IoIosAddCircle } from "react-icons/io";
+import { FiLogOut } from "react-icons/fi";
+import { BsCardChecklist } from "react-icons/bs";
 
 function App() {
   
@@ -38,24 +41,24 @@ function App() {
         }
         {
         user &&
-        <div>
-          <div className='settings-header'>
-            <p className='hello-user'>Terve {user.user.name.toLowerCase()}</p>
-            <Link to={`/settings/${user.user._id}/`}>
-              <FcSettings className='settings-icon'/>
-            </Link>            
-          </div>
-          <ul className='nav'>
-            <li>
-              <Link style={{textDecoration: 'none'}} to="/employee"><h1>Työntekijät</h1></Link>
-            </li>
-            <li>
-              <Link style={{textDecoration: 'none'}} to="/employee/add"><h1>Lisää Työntekijät</h1></Link>               
-            </li>
-            <li>
-            <Link style={{textDecoration: 'none'}} onClick={handleLogout} to="/login"><h1 >Kirjaudu ulos</h1></Link>
-            </li>
-          </ul>
+        <div>           
+          <p className='hello-user'>Terve {user.user.name.toLowerCase()}</p>
+          <div className='settings-container'>
+            <ul className='nav'>
+              <li>
+                <Link to={`/settings/${user.user._id}/`}><FcSettings className='settings-icon nav-icon'/></Link>            
+              </li>
+              <li>
+                <Link style={{textDecoration: 'none'}} to="/employee"><BsCardChecklist className='list-icon nav-icon'/></Link>
+              </li>
+              <li>
+                <Link style={{textDecoration: 'none'}} to="/employee/add"><IoIosAddCircle className='add-icon nav-icon'/></Link>               
+              </li>
+              <li>
+              <Link style={{textDecoration: 'none'}} onClick={handleLogout} to="/login"><FiLogOut className='logout-icon nav-icon'/></Link>
+              </li>
+            </ul>
+         </div>
         </div> 
         }
       </div>

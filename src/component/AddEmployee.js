@@ -38,7 +38,8 @@ export default function AddEmployee({msg, setMsg}) {
         window.location.reload();
     }
     return (
-        <div>
+        <div style={{color: "white"}}>
+            <div style={{backgroundColor: "white"}}><h3 style={{color: "navy"}}>Lisää työntekijä</h3></div>
             <form className='add-form' onSubmit={getNewEmployee}>
                 <br className='responsive-br'/>
                 <label>Lisää työntekijä</label>
@@ -47,6 +48,7 @@ export default function AddEmployee({msg, setMsg}) {
                 <br className='responsive-br'/>
                 <input required type='text' placeholder='Tiimi' value={newTeam} onChange={(e) => { return setNewTeam(e.target.value)}}/>
                 <br className='responsive-br'/>
+                <br/>
                 <label> Aloitus päivä</label>
                 <br className='responsive-br'/>
                 <input required type='date' value={newFirstDay} onChange={(e) => { return setNewFirstDay(e.target.value)}}/>
