@@ -42,7 +42,6 @@ export default function AddEmployee({msg, setMsg}) {
             <div style={{backgroundColor: "white"}}><h3 style={{color: "navy"}}>Lisää työntekijä</h3></div>
             <form className='add-form' onSubmit={getNewEmployee}>
                 <br className='responsive-br'/>
-                <label>Lisää työntekijä</label>
                 <br className='responsive-br'/>
                 <input required type='text' placeholder='Etu- ja sukunimi' value={newEmployee} onChange={(e) => { return setNewEmployee(e.target.value)}}/>
                 <br className='responsive-br'/>

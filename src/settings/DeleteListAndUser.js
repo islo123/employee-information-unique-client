@@ -7,8 +7,8 @@ import { useEmployeeContext } from '../hooks/useEmployeeContext'
 import { motion } from "framer-motion"
 
 const modalOpen = {
-  visible: { opacity: 1, width: '400px', height: '400px' },
-  hidden: { opacity: 0, width: '100px', height: '350px' }
+  visible: { opacity: 1, width: '300px', height: '250px' },
+  hidden: { opacity: 0, width: '100px', height: '200px' }
 }
 
 export default function DeleteListAndUser() {
@@ -32,9 +32,9 @@ export default function DeleteListAndUser() {
     }
 
   return (
-    <div>
+    <div className='delete-user-container'>
         <div className='delete-all-container'>
-          <button className='confirm-delete-btn' onClick={() => setIsModalOpen(true)}>Poista käyttäjä ja sen tiedot</button>
+          <button className='confirm-delete-btn btn-delete' onClick={() => setIsModalOpen(true)}>Poista käyttäjä ja sen tiedot</button>
         </div>
         {
           isModalOpen &&   
